@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 
 
 @InstallIn(SingletonComponent::class)
@@ -12,8 +13,15 @@ import dagger.hilt.components.SingletonComponent
 class UserModule {
 
     @Provides
+    @Named("Firebase")
     fun provideFirebaseRepo():SaveUserInfo{
         return SaveInfoToFirebase()
+    }
+
+    @Provides
+    @SqlAnnotation
+    fun provideSqlRepo():SaveUserInfo{
+        return SaveInfoToSql()
     }
 
 
@@ -29,3 +37,6 @@ class UserModule {
 
 //as we are saving into module that SaveUserInfo will return
 // SaveInfoToFirebase() and that why it will return only the value of  one function not 2
+
+// Incase if we are using provides and bind with same interface there will be runtime compile time error Duplicate binding
+// For this error we have to use @Qualifier ->  @Name -> we will create our own annotation for avoiding typos

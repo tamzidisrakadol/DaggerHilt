@@ -12,6 +12,7 @@ class UserApplication : Application() {
     lateinit var userRepository: UserRepository // this is called field injection it will create the object when it needs
 
     @Inject
+    @SqlAnnotation
     lateinit var saveUserInfo: SaveUserInfo
 
     override fun onCreate() {

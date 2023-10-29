@@ -1,21 +1,20 @@
 package com.example.dagerhilt
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-//    @Inject
+    //    @Inject
 //    lateinit var userRepository: UserRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    //    userRepository.saveUser("tam@gmail.com","tamz121")
+        //    userRepository.saveUser("tam@gmail.com","tamz121")
     }
 }
 

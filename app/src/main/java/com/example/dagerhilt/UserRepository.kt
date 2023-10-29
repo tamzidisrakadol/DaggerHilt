@@ -3,10 +3,10 @@ package com.example.dagerhilt
 import android.util.Log
 import javax.inject.Inject
 
-class UserRepository @Inject constructor(val loggerService: LoggerService){
+class UserRepository @Inject constructor(val loggerService: LoggerService) {
 
-    fun saveUser(email:String,pass:String){
-        Log.d("tag","User saved with db $email")
+    fun saveUser(email: String, pass: String) {
+        Log.d("tag", "User saved with db $email")
         loggerService.log("EXAMPLE")
     }
 }
